@@ -59,6 +59,8 @@ flutter:
     - family: Raleway
       fonts:
         - asset: assets/Raleway-Regular.ttf
+        - asset: assets/Raleway-Medium.ttf
+          weight: 500
         - asset: assets/Raleway-SemiBold.ttf
           weight: 600
         - asset: assets/Raleway-Bold.ttf
