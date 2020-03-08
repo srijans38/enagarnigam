@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hacknitr/utils/cat_box.dart';
+import 'package:hacknitr/utils/small_button.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -55,7 +56,10 @@ class HomeScreen extends StatelessWidget {
                       minWidth: MediaQuery.of(context).size.width / 4.9,
                       maxWidth: MediaQuery.of(context).size.width / 4.9,
                     ),
-                    child: Icon(Icons.search),
+                    child: Icon(
+                      Icons.search,
+                      size: 20.0,
+                    ),
                   ),
                 ],
               ),
@@ -113,6 +117,12 @@ class HomeScreen extends StatelessWidget {
                       fontSize: 25,
                     ),
                   ),
+                  SizedBox(height: MediaQuery.of(context).size.height / 25),
+                  Row(
+                    children: <Widget>[
+                      SmallButton(),
+                    ],
+                  )
                 ],
               ),
             ),
@@ -129,12 +139,31 @@ class HomeScreen extends StatelessWidget {
                   children: <Widget>[
                     CatBox(
                       color: Color(0xFFE7A063),
+                      icon: 'assets/services_icon.png',
+                      label: 'Services',
+                      wave: 1,
+                      top: 0.0,
                     ),
                     CatBox(
                       color: Color(0xFFBFB2EB),
+                      icon: 'assets/explore_icon.png',
+                      label: 'Explore',
+                      wave: 2,
+                      top: 0.0,
                     ),
                     CatBox(
                       color: Color(0xFF9BEB9F),
+                      icon: 'assets/status_icon.png',
+                      label: 'Status',
+                      wave: 3,
+                      top: -MediaQuery.of(context).size.height / 15,
+                    ),
+                    CatBox(
+                      color: Color(0xFF78D3F4),
+                      icon: 'assets/payments_icon.png',
+                      label: 'Payments',
+                      wave: 4,
+                      top: MediaQuery.of(context).size.height / 11,
                     ),
                   ],
                 ),
