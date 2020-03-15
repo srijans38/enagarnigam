@@ -1,0 +1,12 @@
+.btn{
+    text-decoration: none; 
+    border: 3px black; 
+    border-style: solid; 
+     border-radius: 30px; padding: 0.8em;
+    background-color: orange;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">
+</head>
+
+<body>
+    <nav>
+        <div id="selected-box"></div>
+        <div id="p-info">
+            <div class="photo">
+                <img src="{% static 'img/admin.png' %}" class="i"/>
+            </div>
+            <p style="border: 3px white; border-style: double; padding: 0.5em; border-radius: 30px;">ADMIN : {{ user.username }}</p>
+        </div>
+        <ul id="nav-list">
+            <li class="list-item" style="text-align: center;"><a href="{% url 'home' %}">Dashboard</a></li>
+            <li class="list-item" style="text-align: center;"><a href="{% url 'sr' %}">Service Requests</a></li>
+            <li class="list-item" style="text-align: center;"><a href="{% url 'report' %}">Reports</a></li>
+            <li class="list-item" style="text-align: center;"><a href="{% url 'map' %}">Map</a></li>
+            <li class="list-item" style="text-align: center;"><a href="{% url 'forum' %}">Forum</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %} {% endblock %}
+    </main>
+
+    <script>
+        var x = document.getElementsByClassName('list-item');
+        Array.from(x).forEach(element => {
+            element.onclick = () => {
+                document.getElementById('selected').id = '';
+                element.id = 'selected';
+        }
+        });
+    </script>
+</body>
+
+</html>
