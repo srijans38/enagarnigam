@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hacknitr/screens/services_list_screen.dart';
 import 'package:hacknitr/utils/cat_box.dart';
 import 'package:hacknitr/utils/small_button.dart';
 
@@ -11,7 +12,7 @@ class HomeScreen extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             Positioned(
-              top: 150.0,
+              top: MediaQuery.of(context).size.height / 5,
               child: Row(
                 children: <Widget>[
                   Container(
@@ -137,12 +138,22 @@ class HomeScreen extends StatelessWidget {
                   //shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
-                    CatBox(
-                      color: Color(0xFFE7A063),
-                      icon: 'assets/services_icon.png',
-                      label: 'Services',
-                      wave: 1,
-                      top: 0.0,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ServicesListScreen(),
+                          ),
+                        );
+                      },
+                      child: CatBox(
+                        color: Color(0xFFE7A063),
+                        icon: 'assets/services_icon.png',
+                        label: 'Services',
+                        wave: 1,
+                        top: 0.0,
+                      ),
                     ),
                     CatBox(
                       color: Color(0xFFBFB2EB),
