@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainapp',
     'rest_framework',
-    'api'
+    'api',
+    'crispy_forms',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +129,11 @@ STATICFILES_DIRS=[STATIC_DIR]
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':('rest_framework.authentication.TokenAuthentication',),    
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+        
+    ]
+}
