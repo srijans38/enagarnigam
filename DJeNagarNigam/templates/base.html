@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/css/basestyle.css' %}">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <div id="selected-box"></div>
         <div id="p-info">
             <div class="photo">
-                <img src="{% static 'img/admin.png' %}" class="i"/>
+                <img src="{% static 'mainapp/img/admin.png' %}" class="i"/>
             </div>
             <p style="border: 3px white; border-style: double; padding: 0.5em; border-radius: 30px;">ADMIN : {{ user.username }}</p>
         </div>
@@ -26,6 +26,18 @@
             <li class="list-item" style="text-align: center;"><a href="{% url 'forum' %}" class="nv">Forum</a></li>
         </ul>
     </nav>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+    <script src="{% static 'mainapp/js/firebaseconfig.js' %}"></script>
     <main>
         {% block content %} {% endblock %}
     </main>

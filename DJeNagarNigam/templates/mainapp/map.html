@@ -2,7 +2,7 @@
 {% load static %} {% block title %}Map{% endblock %}
 {% block content %}
 {% if user.is_authenticated %}
-<link rel="stylesheet" href="{% static 'css/homestyle.css' %}">
+<link rel="stylesheet" href="{% static 'mainapp/css/homestyle.css' %}">
 <div style="text-align: end; padding-right: 30px;">
   <a href="{% url 'logout' %}" class="btn">LOGOUT</a>
 </div>
